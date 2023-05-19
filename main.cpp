@@ -10,29 +10,24 @@
 using namespace std;
 //public private protected
 
-
-
 class Array {
     int* arr;
     int size;
     int n = 0;
 public:
 
-    Array() {
-        size = 5;
-        arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr[i] = 1 + rand() % 10;//0;
-        }
-        cout << "\nМассив готов.\n";
-        Sleep(1000);
-    }
-    Array(int sizeA) {
-        size = sizeA;
-        arr = new int[size];
-        for (int i = 0; i < size; i++) {
-            arr[i] = 1 + rand() % 10;//0;
-        }
+    //Array() {
+    //    size = 5;
+    //    arr = new int[size];
+    //    for (int i = 0; i < size; i++) {
+    //        arr[i] = 1 + rand() % 10;//0;
+    //    }
+    //    cout << "\nМассив готов.\n";
+    //    Sleep(1000);
+    //}
+    Array(int sizeA = 5) : arr{ arr = new int[size]}, size{ sizeA } {
+
+        randomize(10, 20);
         cout << "\nМассив готов.\n";
         Sleep(1000);
     }
@@ -90,10 +85,5 @@ void main() {
     arr2.print();
     arr2.randomize(5, 40);
     arr2.print();
-
-    cout << "\n\nRandom:\n";
-    for (int i = 0; i < 100; i++) {
-        cout << 1 + rand() % 60 << " ";
-    }
     
 }
